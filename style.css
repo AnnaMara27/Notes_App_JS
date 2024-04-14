@@ -1,16 +1,137 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
+  background-color: #454545;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
+  flex-wrap: wrap;
   margin: 0;
+}
+
+.button-box {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  height: 40px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.add,
+.clear {
+  background-color: #ffffa6;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: inherit;
+  font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.clear i {
+  color: #9d2828;
+}
+
+.button-box .tooltiptext {
+  visibility: hidden;
+  width: fit-content;
+  background-color: #ffffa6;
+  color: #000;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 5px;
+  position: absolute;
+  z-index: -1;
+  bottom: -125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity ease 0.3s;
+}
+
+.button-box .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  margin-left: -5px;
+  border: 5px solid #555 transparent;
+}
+
+.button-box button:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.note {
+  height: 350px;
+  width: 350px;
+  margin: 30px 20px;
+}
+
+.tools {
+  background-color: #fffdbf;
+  border-bottom: 1px solid #333333;
+  font-size: 20px;
+  height: 30px;
+  display: flex;
+  justify-content: end;
+}
+
+.tools button {
+  background-color: transparent;
+  color: #333333;
+}
+
+.tools .edit:hover {
+  color: #009900;
+}
+
+.tools .delete:hover {
+  color: #9d2828;
+}
+
+.main,
+.note textarea {
+  background-color: #fffdbf;
+  font-family: inherit;
+  font-size: 1.2rem;
+  height: 320px;
+  width: 100%;
+  padding: 10px;
+}
+
+.note textarea {
+  outline: none;
+}
+
+.hidden {
+  display: none;
 }
